@@ -1,9 +1,11 @@
+import Layout from '../components/Layout';
+
 export default function AboutPage() {
-    return (
-        <div>
-            <h1>About Us</h1>
-            <p>lorem ipsum</p>
-            <p>lorem ipsum</p>
-        </div>
-    )
+  return (
+    <Layout title='About Us | Next Events' description='We are Next Events.'>
+      <h1>About Us</h1>
+      <p>Next Events lorem ipsum</p>
+      <p>lorem ipsum</p>
+    </Layout>
+  );
 }

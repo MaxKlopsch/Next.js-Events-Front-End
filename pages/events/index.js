@@ -1,7 +1,14 @@
+import { useRouter } from 'next/router';
+import Layout from '../../components/Layout';
+
 export default function EventsPage() {
-    return (
-        <div>
-            <h1>All Events</h1>
-        </div>
-    )
+  const router = useRouter();
+
+  const slug = router.query.slug;
+
+  return (
+    <Layout title='All Events | Next Events'>
+      <h1>All Events</h1>
+    </Layout>
+  );
 }
