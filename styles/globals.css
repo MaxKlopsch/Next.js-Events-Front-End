@@ -25,6 +25,15 @@ h1 {
   margin-bottom: 20px;
 }
 
+textarea,
+input {
+  font-family: 'Poppins', sans-serif;
+}
+
+textarea {
+  padding: 5px;
+}
+
 .btn {
   display: inline-block;
   background: red;
