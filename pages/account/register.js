@@ -8,12 +8,14 @@ import AuthContext from '@/context/AuthContext';
 import styles from '@/styles/AuthForm.module.css';
 
 export default function RegisterPage() {
-  const [firstName, setFirstName] = useState('');
+  const [username, setUsername] = useState('');
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [passwordConfirm, setPasswordConfirm] = useState('');
 
   const { register, error } = useContext(AuthContext);
+
+  useEffect(() => error && toast.error(error));
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -23,7 +25,7 @@ export default function RegisterPage() {
       return;
     }
 
-    register({ firstName, email, password });
+    register({ username, email, password });
   };
 
   return (
@@ -35,13 +37,13 @@ export default function RegisterPage() {
         <ToastContainer />
         <form onSubmit={handleSubmit}>
           <div>
-            <label htmlFor='firstName'>First Name</label>
+            <label htmlFor='username'>Username</label>
             <input
               type='text'
               required
-              id='firstName'
-              value={firstName}
-              onChange={(e) => setFirstName(e.target.value)}
+              id='username'
+              value={username}
+              onChange={(e) => setUsername(e.target.value)}
             />
           </div>
           <div>
